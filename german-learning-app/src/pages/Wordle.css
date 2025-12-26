@@ -1,0 +1,165 @@
+.wordle-page {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.wordle-page h1 {
+  margin-bottom: 1rem;
+}
+
+.level-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.level-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.level-btn:hover, .level-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.hint-section {
+  margin-bottom: 1rem;
+}
+
+.hint-text {
+  margin-top: 0.5rem;
+  color: var(--warning);
+  font-weight: 500;
+}
+
+.wordle-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.wordle-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.wordle-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid var(--card-bg);
+  border-radius: 8px;
+  background: var(--card-bg);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.wordle-cell.correct {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  animation: flip 0.5s;
+}
+
+.wordle-cell.present {
+  background: var(--warning);
+  border-color: var(--warning);
+  animation: flip 0.5s;
+}
+
+.wordle-cell.absent {
+  background: #3a3a3c;
+  border-color: #3a3a3c;
+  animation: flip 0.5s;
+}
+
+@keyframes flip {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0); }
+}
+
+.game-result {
+  margin: 1rem 0;
+}
+
+.result-message {
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.result-message.success {
+  background: rgba(72, 187, 120, 0.2);
+  color: var(--secondary);
+}
+
+.result-message.fail {
+  background: rgba(245, 101, 101, 0.2);
+  color: var(--danger);
+}
+
+.keyboard {
+  margin-top: 1rem;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.key {
+  min-width: 30px;
+  height: 45px;
+  border: none;
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.key:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.key-wide {
+  min-width: 50px;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 400px) {
+  .wordle-cell {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .key {
+    min-width: 25px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,75 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: var(--gray);
+  text-decoration: none;
+  transition: all 0.2s;
+  border-radius: 12px;
+}
+
+.nav-item:hover {
+  color: var(--light);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.2);
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  transition: transform 0.2s;
+}
+
+.nav-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    top: 0;
+    bottom: auto;
+    padding: 1rem 2rem;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav-item {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .nav-label {
+    font-size: 0.9rem;
+  }
+
+  .nav-icon {
+    margin-bottom: 0;
+  }
+
+  .main-content {
+    padding-top: 80px !important;
+    padding-bottom: 1rem !important;
+  }
+}
